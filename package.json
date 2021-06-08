@@ -1,0 +1,42 @@
+{
+  "name": "xteam-api",
+  "version": "0.0.1",
+  "description": "XTEAM API",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "src": "src"
+  },
+  "scripts": {
+    "start": "lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "tsc",
+    "lint": "eslint */*.ts --quiet --fix",
+    "build:all": "tsc && typedoc",
+    "build:docs": "typedoc",
+    "build:tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nurutomo/xteam-api.git"
+  },
+  "keywords": [
+    "api",
+    "tools"
+  ],
+  "author": "Nurutomo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nurutomo/xteam-api/issues"
+  },
+  "homepage": "https://github.com/Nurutomo/xteam-api#readme",
+  "dependencies": {
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.11",
+    "typedoc": "^0.20.0-beta.27",
+    "typescript": "^4.0.0"
+  }
+}
