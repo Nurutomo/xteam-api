@@ -7,7 +7,7 @@ const genAPI = (apikey: string) => got.extend({
     handlers: [
         (options, next) => {
             if (options.searchParams === undefined) options.searchParams = new URLSearchParams
-            options.searchParams.append('APIKEY', apikey)
+            options.searchParams.append('anjay', apikey)
 
             return next(options)
         }
