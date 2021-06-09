@@ -79,5 +79,7 @@ jobs:
     
     - name: NPM Publish
       uses: JS-DevTools/npm-publish@v1
+      env:
+        token: ${{ secrets.NPM_TOKEN }}
       with:
         token: ${{ secrets.NPM_TOKEN }}
