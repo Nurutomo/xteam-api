@@ -20,6 +20,7 @@ const genAPI = (apikey: string) => got.extend({
                 } catch (e) {
                     if (response.headers['content-type']?.startsWith('text/') || response.statusCode >= 500) {
                         response.body = response.rawBody.toString()
+                        if (response.statusCode >= 500) response.body = `(${response.statusCode}) ${response.statusMessage}`
                     } else {
                         response.body = response.rawBody
                     }
