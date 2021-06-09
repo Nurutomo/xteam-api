@@ -34,6 +34,10 @@ let _apikey = ''
 export const API = Object.defineProperty({
     genAPI,
     api: genAPI(_apikey),
+    check_apikey: async (apikey?: string) => {
+        if (apikey) return (await genAPI(apikey).get('cekey')).body
+        return (await API.api.get('cekey')).body
+    },
     dl: {
         ytmp4: async (url: string | URL) => (await API.api.get('dl/ytmp4', {
             searchParams: { url: url.toString() }
