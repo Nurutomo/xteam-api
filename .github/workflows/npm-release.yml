@@ -11,7 +11,9 @@ jobs:
       uses: actions/setup-node@master
       with:
         node-version: 14.0.0
-    - id: publish
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
+    - name: Publish
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+          npm publish --ignore-scripts
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
