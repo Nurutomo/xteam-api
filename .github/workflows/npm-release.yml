@@ -11,9 +11,13 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: 14.0.0
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn run build:tsc
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --ignore-scripts
+          npm publish --ignore-scripts --access public
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
