@@ -220,6 +220,9 @@ export const API = Object.defineProperty({
                 searchParams: { id: id.toString() }
             })).body,
         },
+        peribahasa: async (query: string) => (await API.api.get('search/peribahasa', {
+            searchParams: { q: query }
+        })).body,
     },
     asupan: {
         shitpost: async () => (await API.api.get('asupan')).body,
